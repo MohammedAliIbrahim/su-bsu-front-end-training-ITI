@@ -1,0 +1,172 @@
+<html>
+
+    <head>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        </head>
+
+
+<body>
+
+
+
+    <div class="container">
+
+
+        <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Price:</label>
+            <input type="number" class="form-control" id="price">
+          </div>
+
+          <div class="form-group">
+            <label for="pwd">description:</label>
+            <input type="text" class="form-control" id="description" >
+          </div>
+          <button onclick="addProduct()" type="button" class="btn btn-primary mx-auto d-block">add product</button>
+
+
+          <table class="table table-hover table-info mt-5">
+            <thead>
+              <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>description</th>
+                <th>created date</th>
+              </tr>
+            </thead>
+            <tbody id="productsList" >
+              
+             
+            </tbody>
+          </table>
+
+    </div>
+
+
+
+    <script>
+
+
+class product{
+
+
+constructor(nameValue,priceValue,descriptionValue)
+{
+
+// initializing class properties
+   this.productName=nameValue;
+   this.productPrice=priceValue;
+   this.productDescription=descriptionValue;
+this.createdDate=new Date();
+
+}
+
+
+calcPrice(){
+
+  return this.productPrice*1;
+}
+
+
+}
+
+let productsArr=[];
+let htmlText="";
+if(localStorage.getItem("produtsStorage")!==null)
+
+{
+  let  jsonData=localStorage.getItem("produtsStorage");
+productsArr=JSON.parse(jsonData);
+
+let productsList=document.getElementById("productsList");
+
+productsArr.forEach(
+
+myProuduct=>{
+
+    htmlText+=`
+    <tr>
+        <th>${myProuduct.productName}</th>
+        <th>${myProuduct.productPrice}</th>
+        <th>${myProuduct.productDescription}</th>
+        <th>${myProuduct.createdDate}</th>
+      </tr>
+    `;
+}
+
+)
+
+productsList.innerHTML=htmlText;
+}
+
+
+const addProduct=()=>{
+
+    
+let name=document.getElementById("name").value;
+let price=document.getElementById("price").value;
+let description=document.getElementById("description").value;
+
+// add new prouct object to the array
+// const productObject = new product(name,price,description);
+
+//productsArr.push(productObject);
+
+productsArr.push(new product(name,price,description));
+
+let productsArrJson=JSON.stringify(productsArr); // convert js array ti json string
+
+localStorage.setItem("produtsStorage",productsArrJson);
+
+document.getElementById("name").value="";
+document.getElementById("price").value="";
+document.getElementById("description").value="";
+
+
+
+
+let productsList=document.getElementById("productsList");
+htmlText="";
+productsArr.forEach(
+
+myProuduct=>{
+
+    htmlText+=`
+    <tr>
+        <th>${myProuduct.productName}</th>
+        <th>${myProuduct.productPrice}</th>
+        <th>${myProuduct.productDescription}</th>
+        <th>${myProuduct.createdDate}</th>
+      </tr>
+    `;
+}
+
+)
+
+productsList.innerHTML=htmlText;
+
+
+}
+
+
+
+    </script>
+</body>
+
+
+</html>

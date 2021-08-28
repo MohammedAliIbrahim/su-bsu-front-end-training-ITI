@@ -1,0 +1,68 @@
+div { 
+    
+    
+    background-color: aqua;
+
+
+/*
+ my comment
+*/
+
+}
+
+
+p {
+
+    font-size: small;
+    
+    background-color: yellow;
+    }
+
+span {
+
+
+    font-size: small;
+    background-color: tomato;
+}
+
+
+    * {
+
+
+      color:violet;
+
+
+    }
+
+    #myfavourite{
+
+background-color: wheat;
+
+
+    }
+
+
+
+
+.myclass{
+
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+label.myclass{
+
+font-weight: 900;
+
+
+}
+
+.transparent{
+
+background-color: teal;
+    opacity: 1;
+}

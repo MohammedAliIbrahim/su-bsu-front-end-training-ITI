@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="form-group">
+        <label for="usr">first no</label>
+        <input type="number" class="form-control" id="1st">
+      </div>
+      <div class="form-group">
+        <label for="pwd">second no</label>
+        <input type="number" class="form-control" id="2nd">
+      </div>
+
+
+      <div class="btn-group">
+        <button onclick="multiply()" type="button" class="btn btn-primary">&#215;</button>
+        <button onclick="divide()" type="button" class="btn btn-primary">/</button>
+        <button onclick="add()" type="button" class="btn btn-primary">+</button>
+        <button onclick="subtract()" type="button" class="btn btn-primary">-</button>
+       
+      </div>
+
+
+</div>
+
+
+<p id="result" class="bg-light mt-5 p-5 text-center" style="font-size: large;"></p>
+
+
+
+    <script>
+
+
+
+
+
+
+var add =  () =>
+{
+
+    let n1 = document.getElementById("1st").value;
+    let n2 = document.getElementById("2nd").value;
+
+    document.getElementById("result").innerHTML= parseInt(n1)+parseInt(n2);
+    
+}
+// subtract();
+var subtract = function  ()
+{
+    let n1 = document.getElementById("1st").value;
+    let n2 = document.getElementById("2nd").value;
+
+    document.getElementById("result").innerHTML= parseInt(n1)-parseInt(n2);
+}
+var multiply=   ()=>
+{
+    let n1 = document.getElementById("1st").value;
+    let n2 = document.getElementById("2nd").value;
+
+    document.getElementById("result").innerHTML= parseInt(n1)*parseInt(n2);
+}
+function divide ()
+{
+    let n1 = document.getElementById("1st").value;
+    let n2 = document.getElementById("2nd").value;
+
+    document.getElementById("result").innerHTML= parseInt(n1)/parseInt(n2);
+}
+
+    </script>
+</body>
+
+</html>

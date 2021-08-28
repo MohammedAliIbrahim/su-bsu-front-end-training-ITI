@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="form-group">
+            <label for="usr">enter your total degree</label>
+            <input type="number" class="form-control" id="degree">
+          </div>
+         
+
+          <button  id="mybtn" class="btn btn-success">show my grade</button>
+    
+
+          <br>
+          <p id="result" class="bg-light mt-5 p-5 text-center" style="font-size: large;"></p>
+
+    <script>
+document.getElementById("mybtn").onclick=showGrade;
+
+
+function showGrade()
+{
+
+   let degree= document.getElementById("degree").value;
+
+let grade="";
+
+if (degree >= 85){
+
+    grade="excellent";
+}
+  else if (degree>75&& degree<85) {
+
+    grade="very good";
+  }
+
+  else if  (degree>65&& degree<75){
+grade="good";
+}
+else if  (degree>50&& degree<65){
+grade="pass";
+}
+else{
+grade="poor";
+
+}
+
+
+document.getElementById("result").innerHTML=grade;
+
+
+}
+
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+
+        img {
+            transition: transform .2s ease-in-out;
+            
+        }
+
+
+        img:hover {
+
+            transform:scale(1.1);
+            opacity:0.9;
+
+        }
+    </style>
+
+
+</head>
+<body>
+    <header class="bg-dark mb-5">
+
+
+        <!--<ul class="nav nav-tabs">
+
+        <li class="nav-item active"><a class="nav-link ">link</a></li>
+        <li class="nav-item"><a class="nav-link">link</a></li>
+        <li class="nav-item"><a class="nav-link">link</a></li>
+        <li class="nav-item"><a class="nav-link">link</a></li>
+
+
+
+    </ul>-->
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="form-group ">
+
+           
+            <input type="text" class="form-control " id="search-input" placeholder="search here">
+            <button class="btn btn-success d-inline form-control" onclick="getUserById()">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg>
+            </button>
+
+        </div>
+    </div>
+    <div class="container">
+
+
+
+
+        <div class="row m-5" id="user-list">
+
+            <!--<div class="col-4 card">-->
+            <!--<div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>-->
+            <!--<div class="col-5 card">-->
+            <!--<div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>-->
+            <!--<div class="col-3 card">-->
+            <!--<div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>-->
+        </div>
+
+        <!--<div class="row m-5">
+            <div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>
+            <div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>
+            <div class="col card">
+
+                <img class="img-thumbnail" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFlemEZiQtkvgF-taeDL1K6OEs5NnYnABpCA&usqp=CAU" style="width:350px" />
+                <div class="card-body">
+                    <h4 class="card-title">chiar</h4>
+                    <p class="card-text">price:90</p>
+                    <a href="#" class="btn btn-primary">add to cart</a>
+                </div>
+
+
+            </div>
+
+
+        </div>-->
+
+    </div>
+
+    <footer class="page-footer bg-dark text-light p-3 container-fluid">
+        <div class="row">
+            <div class="col-9">
+
+                <div>
+
+                    With this notation, it is possible to describe, and therefore compose, most common transformations: rotations, scaling, or skewing. (In fact, all transformations that are linear functions can be described.) Composite transformations are effectively applied in order from right to left.
+                    <br />
+                    However, one major transformation is not linear, and therefore must be special-cased when using this notation: translation. The translation vector (tx, ty) must be expressed separately, as two additional parameters.
+
+                </div>
+
+            </div>
+            <div class="col-3 text-center">
+
+                <a href="#" class="fa fa-facebook d-block m-3"></a>
+                <a href="#" class="fa fa-linkedin d-block m-3"></a>
+                <a href="#" class="fa fa-twitter d-block m-3"></a>
+            </div>
+
+        </div>
+        <div class="row border-top border-secondary ">
+            <div class="mx-auto p-3">
+                Copyright 2020 travel abroed   © All Right Reserved
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="onlineStore.js"></script>
+</body>
+
+
+</html>

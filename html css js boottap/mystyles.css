@@ -1,0 +1,69 @@
+
+h1{
+
+    font-size: small;
+    background-color: darkgray;
+    font-family: fantasy;
+}
+    
+
+
+table ,th , td{
+
+
+border: 1px solid black;
+border-collapse: collapse;
+
+}
+
+
+
+
+
+img:hover{
+
+    transform: scale(1.1);
+    opacity: .7;
+
+
+}
+
+#selectedP{
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 31px;
+
+
+
+}
+
+#selectedP:hover{
+
+    background-color: azure;
+    color: blue;
+}
+
+
+
+tr:hover{
+
+  
+    
+    background-color: aqua;
+}
+
+
+.big-font{
+
+    font-size: 35px;
+}
+
+
+
+*{
+
+
+    color: chocolate;
+
+
+}

@@ -1,0 +1,60 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<body class="container">
+
+
+
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment" onkeyup="counChars()"></textarea>
+      </div>
+
+      <p id="result" class="bg-light mt-5 p-5 text-center" style="font-size: large;"></p>
+
+      <p id="wordsCounter" class="bg-light mt-5 p-5 text-center" style="font-size: large;"></p>
+
+
+      <script>
+        
+ function counChars(){
+     
+let comment=document.getElementById("comment").value;
+
+let count= comment.length;
+//console.log(count);
+
+// document.getElementById("result").innerHTML= "your characters couter is "+count;
+
+document.getElementById("result").innerHTML= `your characters couter is ${count}`;
+
+// 
+const wordsArray= comment.trim().split(" ");
+let wordsCounter = wordsArray.length;
+
+document.getElementById("wordsCounter").innerHTML= `your words couter is ${wordsCounter}`;
+
+}
+
+
+
+      </script>
+
+</body>
+
+</html>

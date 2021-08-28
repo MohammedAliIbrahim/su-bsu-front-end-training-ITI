@@ -1,0 +1,138 @@
+<html>
+
+    <head>
+
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    
+    <style>
+    img{
+    
+    
+        height: 200px;
+        
+    }
+    img:hover{
+    
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    
+    </style>
+    
+    
+    </head>
+
+
+
+
+    <body>
+
+        <div class="container">
+        <div class="row mt-5" id="course-list">
+
+     
+        
+                
+        
+            
+        </div>
+
+    </div>
+    </body>
+
+
+    <script>
+
+let coursesArr=[
+{
+    title:"sql",
+imgUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXNEMP8iA0XuzE6749xM_ptjqNkUWOYjX2Qg&usqp=CAU",
+description:"sql is very important course",
+price:100
+}
+,
+
+
+{
+    title:"java",
+imgUrl:"data:image/png;base64,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",
+description:"java is very important course",
+price:90
+}
+
+,
+
+
+{
+    title:"c#",
+imgUrl:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAW8A…17+1azXu7VvPertW8t2r/B7KYeW9lInAtAAAAAElFTkSuQmCC",
+description:"C# is very important course",
+price:110
+}
+
+
+
+
+];
+
+/*
+let course={
+    title:"sql",
+imgUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXNEMP8iA0XuzE6749xM_ptjqNkUWOYjX2Qg&usqp=CAU",
+description:"sql is very important course",
+price:100
+}
+
+*/
+let courseCol=document.getElementById("course-list");
+
+let htmlText="";
+/*
+for(i=0;i<3;i++){
+htmlText+=`<div class="card" >
+                   <img src="${course.imgUrl}" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">${course.title}</h5>
+                      <p class="card-text">${course.description}</p>
+                      <p class="card-text">${course.price}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>`;
+
+                }
+*/
+
+for (let x of coursesArr)
+
+{
+
+
+    htmlText+=`
+    
+    <div class="col">
+    <div class="card" >
+                   <img src="${x.imgUrl}" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">${x.title}</h5>
+                      <p class="card-text">${x.description}</p>
+                      <p class="card-text">${x.price}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                  </div>`;
+
+
+}
+
+courseCol.innerHTML=htmlText;
+
+    </script>
+
+</html>

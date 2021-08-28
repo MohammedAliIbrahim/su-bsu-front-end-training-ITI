@@ -1,0 +1,112 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<body class="container">
+
+
+
+    <div class="form-group">
+        <label for="usr">enter you to item </label>
+        <input type="text" class="form-control" id="item">
+      </div>
+
+
+      <button class="btn btn-success mx-auto d-block" onclick="add()">add toDo Item</button>
+
+
+     
+        <ul id="itemsList" class="list-group mt-5">
+           
+            
+
+            
+          </ul>
+    
+   
+
+     
+
+
+      <script>
+
+
+var toDoList = [];
+function add (){
+
+    
+
+let itemText=document.getElementById("item").value;
+
+toDoList.push(itemText);
+document.getElementById("item").value="";
+
+let htmlText="";
+
+/*
+for (let listItem of toDoList)
+{
+ 
+    htmlText+=`<li class="list-group-item"> ${listItem} </li>`;
+
+}*/
+
+
+for (let i =0;i<toDoList.length;i++)
+
+{
+
+
+
+    htmlText+=`<li class="list-group-item"> ${toDoList[i]}  <button onclick="toDoList.splice(${i} , 1); ">delete</button></li>`;
+    document.getElementById("itemsList").innerHTML=htmlText;
+}
+
+
+
+/*
+toDoList.forEach(function (value){
+
+    htmlText+=`<li class="list-group-item"> ${value} </li>`;
+
+})
+
+
+*/
+
+/*
+toDoList.map((value)=>{
+
+htmlText+=`<li class="list-group-item"> ${value}  <button onclick="toDoList.splice(0, 1);">delete</button> </li>`;
+
+})
+*/
+
+document.getElementById("itemsList").innerHTML=htmlText;
+
+
+}
+
+
+
+
+
+      </script>
+
+</body>
+
+</html>
